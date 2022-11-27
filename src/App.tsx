@@ -47,7 +47,7 @@ export function App () {
       <Main>
         <Header />
         <SearchForm />
-        <Profile />
+        <Profile user={user} />
       </Main>
       <GlobalStyles />
     </ThemeProvider>
