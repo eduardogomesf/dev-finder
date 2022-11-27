@@ -36,16 +36,19 @@ export const ProfileHeader = styled.div`
                 line-height: 39px;
 
                 color: ${({ theme }) => theme.colors.darkText};
-
             }
 
-            time {
+            > time {
                 font-weight: 400;
                 font-size: ${({ theme }) => theme.fonts.md};
                 line-height: 22px;
                 text-align: right;
 
                 color: ${({ theme }) => theme.colors.lightText};
+
+                @media (max-width: 768px) {
+                    display: none;
+                }
             }
         }
 
@@ -62,7 +65,23 @@ export const ProfileHeader = styled.div`
             }
         }
 
-        p {
+        > time {
+            margin-top: 10px;
+
+            font-weight: 400;
+            font-size: ${({ theme }) => theme.fonts.md};
+            line-height: 22px;
+
+            color: ${({ theme }) => theme.colors.lightText};
+
+            display: none;
+
+            @media (max-width: 768px) {
+                display: block;
+            }
+        }
+
+        > p {
             margin-top: 20px;
 
             font-weight: 400;
@@ -71,7 +90,28 @@ export const ProfileHeader = styled.div`
 
             color: ${({ theme }) => theme.colors.text};
             opacity: 0.75;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
         }
+    }
+`
+
+export const Bio = styled.p`
+    margin-top: 1.25rem;
+
+    font-weight: 400;
+    font-size: ${({ theme }) => theme.fonts.md};
+    line-height: 25px;
+
+    color: ${({ theme }) => theme.colors.text};
+    opacity: 0.75;
+
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
     }
 `
 
@@ -113,6 +153,10 @@ export const ProfileInfo = styled.div`
             color: ${({ theme }) => theme.colors.title};
         }
     }
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+    }
 `
 
 export const ProfileSocials = styled.div`
@@ -125,6 +169,8 @@ export const ProfileSocials = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 3.75rem;
     grid-row-gap: 1.25rem;
+
+ 
 `
 
 type SocialProps = {

@@ -1,6 +1,6 @@
 import { Buildings, Link, MapPin, TwitterLogo } from "phosphor-react";
 import { User } from "../../App";
-import { Container, ProfileHeader, ProfileInfo, ProfileSocials, Social } from "./styles";
+import { Bio, Container, ProfileHeader, ProfileInfo, ProfileSocials, Social } from "./styles";
 
 type ProfileProps = {
     user: User
@@ -37,9 +37,13 @@ export function Profile ({ user }: ProfileProps) {
                         @{user.username}
                     </a>
 
+                    <time>Joined {formattedDate}</time>
+
                     <p>{user.bio ? user.bio : 'This profile has no bio'}</p>
                 </div>
             </ProfileHeader>
+
+            <Bio>{user.bio ? user.bio : 'This profile has no bio'}</Bio>
 
             <ProfileInfo>
                 <div>
