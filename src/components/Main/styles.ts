@@ -9,6 +9,8 @@ export const MainContainer = styled.main`
     @media (max-width: 450px) {
         margin-top: 2rem;
         margin-bottom: 2rem;
+
+        padding: 0 1rem;
     }
 
     @media (max-width: 768px) {
