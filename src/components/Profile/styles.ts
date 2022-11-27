@@ -9,6 +9,10 @@ export const Container = styled.div`
     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
 
     border-radius: 15px;
+
+    @media (max-width: 450px) {
+        padding: 2rem 1.5rem;
+    }
 `
 
 export const ProfileHeader = styled.div`
@@ -20,6 +24,11 @@ export const ProfileHeader = styled.div`
         width: 117px;
         height: 117px;
         border-radius: 50%;
+
+        @media (max-width: 450px) {
+            width: 70px;
+            height: 70px;
+        }
     }
 
     > div {
@@ -45,9 +54,18 @@ export const ProfileHeader = styled.div`
                 text-align: right;
 
                 color: ${({ theme }) => theme.colors.lightText};
+            }
 
-                @media (max-width: 768px) {
+            @media (max-width: 768px) {
+                > time {
                     display: none;
+                }
+            }
+
+            @media (max-width: 450px) {
+                > strong {
+                    font-size: ${({ theme }) => theme.fonts["xl"]};
+                    line-height: 24px;
                 }
             }
         }
@@ -62,6 +80,11 @@ export const ProfileHeader = styled.div`
             &:hover {
                 transition: color 0.5s;
                 color: ${({ theme }) => theme.colors.activeHighlight};
+            }
+
+            @media (max-width: 450px) {
+                font-size: ${({ theme }) => theme.fonts.sm};
+                line-height: 19px;
             }
         }
 
@@ -78,6 +101,11 @@ export const ProfileHeader = styled.div`
 
             @media (max-width: 768px) {
                 display: block;
+            }
+
+            @media (max-width: 450px) {
+                font-size: ${({ theme }) => theme.fonts.sm};
+                line-height: 19px;
             }
         }
 
@@ -96,6 +124,10 @@ export const ProfileHeader = styled.div`
             }
         }
     }
+
+    @media (max-width: 450px) {
+        gap: 1.25rem;
+    }
 `
 
 export const Bio = styled.p`
@@ -112,6 +144,10 @@ export const Bio = styled.p`
 
     @media (max-width: 768px) {
         display: block;
+    }
+
+    @media (max-width: 450px) {
+        font-size: ${({ theme }) => theme.fonts.sm};
     }
 `
 
@@ -135,7 +171,6 @@ export const ProfileInfo = styled.div`
         flex-direction: column;
         align-items: flex-start;
 
-
         span {
             font-weight: 400;
             font-size: ${({ theme }) => theme.fonts.sm};
@@ -152,10 +187,31 @@ export const ProfileInfo = styled.div`
 
             color: ${({ theme }) => theme.colors.title};
         }
+
+        @media (max-width: 450px) {
+            align-items: center;
+
+            span {
+                font-size: ${({ theme }) => theme.fonts['2sm']};
+                line-height: 16px;
+            }
+
+            strong {
+                font-size: ${({ theme }) => theme.fonts["xl"]};
+                line-height: 24px;
+            }
+        }
     }
 
     @media (max-width: 768px) {
         max-width: 100%;
+    }
+
+    @media (max-width: 450px) {
+        justify-content: space-between;
+        gap: 1rem;
+
+        padding: 1rem 1rem;
     }
 `
 
@@ -170,7 +226,13 @@ export const ProfileSocials = styled.div`
     grid-column-gap: 3.75rem;
     grid-row-gap: 1.25rem;
 
- 
+    @media (max-width: 450px) {
+        margin-top: 1.5rem;
+
+        grid-template-columns: 1fr;
+        grid-column-gap: 0;
+        grid-row-gap: 1rem;
+    }
 `
 
 type SocialProps = {
@@ -209,6 +271,13 @@ export const Social = styled.div<SocialProps>`
 
         &:hover {
             text-decoration: underline;
+        }
+    }
+
+    @media (max-width: 450px) {
+        strong, a {
+            font-size: ${({ theme }) => theme.fonts.sm};
+            line-height: 19px;
         }
     }
 `
