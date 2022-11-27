@@ -17,6 +17,7 @@ export const darkTheme = {
         '1.5xl': '1.125rem',
         xl: '1rem',
         md: '0.9375rem',
-        sm: '0.8125rem'
+        sm: '0.8125rem',
+        '2sm': '0.6875rem'
     }
 }
