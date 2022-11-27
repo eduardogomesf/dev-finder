@@ -5,7 +5,7 @@ export const darkTheme = {
         background: '#141D2F',
         card: '#1E2A47',
         title: '#FFFFFF',
-        text: '##FFFFFF',
+        text: '#FFFFFF',
         lightText: '#FFFFFF',
         darkText: '#FFFFFF',
         error: '#F74646',
