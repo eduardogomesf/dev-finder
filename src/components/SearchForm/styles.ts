@@ -57,9 +57,14 @@ export const Container = styled.form`
         font-size: ${({ theme }) => theme.fonts.xl};
         line-height: 24px;
 
-        &:hover {
+        &:not(:disabled):hover {
             transition: background-color 0.5s;
             background-color: ${({ theme }) => theme.colors.activeHighlight};
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
         }
     }
 `
