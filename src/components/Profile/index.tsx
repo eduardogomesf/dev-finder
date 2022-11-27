@@ -73,7 +73,7 @@ export function Profile ({ user }: ProfileProps) {
                 <Social isDisabled={!hasTwitter}>
                     <TwitterLogo weight="fill" />
                     <a
-                        href={hasTwitter ? `www.twitter.com/${user.socials.twitterUsername}` : '#'}
+                        href={hasTwitter ? `https://www.twitter.com/${user.socials.twitterUsername}` : '#'}
                         target='_blank'
                     >
                         {hasTwitter ? user.socials.twitterUsername : notAvailableMessage}
