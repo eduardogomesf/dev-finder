@@ -40,11 +40,11 @@ export const Container = styled.header`
 
         &:hover {
             transition: color 0.2s;
-            color: ${({ theme }) => theme.colors.lightTextHover};
+            color: ${({ theme }) => theme.colors.darkText};
 
             > svg {
                 transition: color 0.2s;
-                color: ${({ theme }) => theme.colors.lightTextHover};
+                color: ${({ theme }) => theme.colors.darkText};
             }
         }
     }
