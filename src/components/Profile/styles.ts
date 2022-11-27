@@ -137,6 +137,7 @@ export const Social = styled.div<SocialProps>`
     gap: 1rem;
 
     opacity: ${({ isDisabled }) => isDisabled ? 0.5 : 1};
+    pointer-events: ${({ isDisabled }) => isDisabled ? 'none' : 'initial'};
 
     svg {
         width: 20px;
