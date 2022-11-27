@@ -40,13 +40,13 @@ export function App () {
       .catch(error => {
         console.log(error)
       })
-  })
+  }, [])
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <Main>
         <Header />
-        <SearchForm />
+        <SearchForm changeUser={setUser} />
         <Profile user={user} />
       </Main>
       <GlobalStyles />
