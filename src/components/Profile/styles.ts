@@ -19,6 +19,7 @@ export const ProfileHeader = styled.div`
     > img {
         width: 117px;
         height: 117px;
+        border-radius: 50%;
     }
 
     > div {
