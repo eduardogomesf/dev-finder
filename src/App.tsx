@@ -46,7 +46,10 @@ export function App () {
     <ThemeProvider theme={defaultTheme}>
       <Main>
         <Header />
-        <SearchForm changeUser={setUser} />
+        <SearchForm
+          changeUser={setUser}
+          currentUsername={user.username}
+        />
         <Profile user={user} />
       </Main>
       <GlobalStyles />

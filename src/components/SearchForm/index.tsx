@@ -7,9 +7,10 @@ import { Container } from "./styles";
 
 type SearchFormProps = {
     changeUser: (user: User) => void
+    currentUsername: string
 }
 
-export function SearchForm ({ changeUser }: SearchFormProps) {
+export function SearchForm ({ changeUser, currentUsername }: SearchFormProps) {
     const [error, setError] = useState('')
     const [username, setUsername] = useState('')
 
@@ -21,6 +22,11 @@ export function SearchForm ({ changeUser }: SearchFormProps) {
                 return
             }
 
+            if (currentUsername === username) {
+                setUsername('')
+                return
+            }
+
             setError('')
 
             const response = await api.get(`/users/${username}`)
@@ -28,6 +34,7 @@ export function SearchForm ({ changeUser }: SearchFormProps) {
             const { data } = response
 
             changeUser(mapUserFromGithub(data))
+            setUsername('')
         } catch (err: any) {
             if (err.response.status === 404) {
                 setError('No results')
