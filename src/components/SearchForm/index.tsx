@@ -22,12 +22,12 @@ export function SearchForm ({ changeUser, currentUsername }: SearchFormProps) {
                 return
             }
 
+            setError('')
+
             if (currentUsername === username) {
                 setUsername('')
                 return
             }
-
-            setError('')
 
             const response = await api.get(`/users/${username}`)
 
