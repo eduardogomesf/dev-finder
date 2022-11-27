@@ -7,6 +7,8 @@ type ProfileProps = {
 }
 
 export function Profile ({ user }: ProfileProps) {
+    const notAvailableMessage = 'Not available'
+
     const hasTwitter = !!user?.socials?.twitterUsername
     const hasBlog = !!user?.socials?.blog
 
@@ -24,11 +26,16 @@ export function Profile ({ user }: ProfileProps) {
                 <img src={user.avatarUrl ? user.avatarUrl : '/default-avatar.png'} />
                 <div>
                     <div>
-                        <strong>{user.name}</strong>
+                        <strong>{user.name ? user.name : notAvailableMessage}</strong>
                         <time>Joined {formattedDate}</time>
                     </div>
 
-                    <a href={user.profileUrl} target='_blank'>@{user.username}</a>
+                    <a
+                        href={user.profileUrl}
+                        target='_blank'
+                    >
+                        @{user.username}
+                    </a>
 
                     <p>{user.bio ? user.bio : 'This profile has no bio'}</p>
                 </div>
@@ -55,7 +62,7 @@ export function Profile ({ user }: ProfileProps) {
                 <Social isDisabled={!user.location}>
                     <MapPin weight="fill" />
                     <strong>
-                        {user.location ? user.location : 'Not available'}
+                        {user.location ? user.location : notAvailableMessage}
                     </strong>
                 </Social>
 
@@ -65,7 +72,7 @@ export function Profile ({ user }: ProfileProps) {
                         href={hasTwitter ? `www.twitter.com/${user.socials.twitterUsername}` : '#'}
                         target='_blank'
                     >
-                        {hasTwitter ? user.socials.twitterUsername : 'Not available'}
+                        {hasTwitter ? user.socials.twitterUsername : notAvailableMessage}
                     </a>
                 </Social>
 
@@ -75,13 +82,13 @@ export function Profile ({ user }: ProfileProps) {
                         href={hasBlog ? user.socials.blog : '#'}
                         target={'_blank'}
                     >
-                        {hasBlog ? 'My blog' : '#'}
+                        {hasBlog ? 'My blog' : notAvailableMessage}
                     </a>
                 </Social>
 
                 <Social isDisabled={!user.company}>
                     <Buildings weight="fill" />
-                    <strong>{user.company ? user.company : 'Not available'}</strong>
+                    <strong>{user.company ? user.company : notAvailableMessage}</strong>
                 </Social>
             </ProfileSocials>
         </Container>
