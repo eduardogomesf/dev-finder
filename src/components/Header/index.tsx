@@ -1,12 +1,19 @@
 import { Moon, Sun } from 'phosphor-react'
 import { useState } from 'react';
+import { darkTheme } from '../../styles/themes/dark';
+import { defaultTheme } from '../../styles/themes/default';
 import { Container } from "./styles";
 
-export function Header () {
+type HeaderProps = {
+    changeTheme: (theme: any) => void
+}
+
+export function Header ({ changeTheme }: HeaderProps) {
     const [theme, setTheme] = useState('light')
 
     function handleSwitchThemes () {
         const newTheme = theme === 'light' ? 'dark' : 'light'
+        changeTheme(newTheme === 'light' ? defaultTheme : darkTheme)
         setTheme(newTheme)
     }
 

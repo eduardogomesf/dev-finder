@@ -29,6 +29,7 @@ export type User = {
 
 export function App () {
   const [user, setUser] = useState<User>({} as User)
+  const [theme, setTheme] = useState(defaultTheme)
 
   useEffect(() => {
     api.get('/users/eduardogomesf')
@@ -43,9 +44,9 @@ export function App () {
   }, [])
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme}>
       <Main>
-        <Header />
+        <Header changeTheme={setTheme} />
         <SearchForm
           changeUser={setUser}
           currentUsername={user.username}
