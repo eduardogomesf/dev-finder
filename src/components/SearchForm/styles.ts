@@ -42,6 +42,10 @@ export const Container = styled.form`
         line-height: 22px;
 
         color: ${({ theme }) => theme.colors.error};
+
+        @media (max-width: 450px) {
+            display: none;
+        } 
     }
 
     > button {
@@ -65,6 +69,25 @@ export const Container = styled.form`
         &:disabled {
             cursor: not-allowed;
             opacity: 0.5;
+        }
+    }
+
+    @media (max-width: 450px) {
+        padding: 0.5625rem 0.5rem;
+
+        gap: 0.5rem;
+
+        > input {
+            font-size: ${({ theme }) => theme.fonts['sm']};
+        }
+
+        > svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        > button {
+            padding: 0.75rem 1.125rem;
         }
     }
 `

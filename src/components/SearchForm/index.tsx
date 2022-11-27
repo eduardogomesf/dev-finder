@@ -37,6 +37,7 @@ export function SearchForm ({ changeUser, currentUsername }: SearchFormProps) {
             setUsername('')
         } catch (err: any) {
             if (err.response.status === 404) {
+                setUsername('')
                 setError('No results')
                 return
             }
